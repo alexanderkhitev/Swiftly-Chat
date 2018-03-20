@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Swift_Chat
+@testable import Swiftly_Chat
 
 class Swift_ChatTests: XCTestCase {
     

@@ -13,7 +13,10 @@ extension UIStoryboard {
     
     func instantiateViewControllerWithIdentifier<T>(_ identifier: T.Type) -> T {
         let identifier = String(describing: identifier)
-        return instantiateViewController(withIdentifier: identifier) as! T
+        guard let controller = instantiateViewController(withIdentifier: identifier) as? T else {
+            fatalError("instantiateViewControllerWithIdentifier fatal error")
+        }
+        return controller
     }
     
 }

@@ -21,6 +21,5 @@ extension UIViewController {
     func hideBackButtonTitle() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
     }
-
     
 }
