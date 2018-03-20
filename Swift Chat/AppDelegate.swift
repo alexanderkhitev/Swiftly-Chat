@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Firebase
         setupFirebaseSettings()
+        chooseMainController()
         return true
     }
 
@@ -46,10 +47,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - Firebase
+
 extension AppDelegate {
     
     private func setupFirebaseSettings() {
         FirebaseGeneralManager.shared.configure()
+    }
+    
+}
+
+// MARK: - Choose Main Controller
+
+extension AppDelegate {
+    
+    private func chooseMainController() {
+        let router = Router()
+        router.chooseStartController()
     }
     
 }

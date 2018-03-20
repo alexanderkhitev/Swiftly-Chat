@@ -19,6 +19,8 @@
 		5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD10390206184CE00FCDA96 /* FirebaseGeneralManager.swift */; };
 		5AD1039520618AAF00FCDA96 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039420618AAF00FCDA96 /* AuthManager.swift */; };
 		5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */; };
+		5AD1039A20618DB500FCDA96 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039920618DB500FCDA96 /* Router.swift */; };
+		5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF77B2206195F000577210 /* RegisterMainViewController.swift */; };
 		7F4F6DC42CC2970A6A2518B1 /* Pods_Swiftly_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F57381B91C198D368CB243 /* Pods_Swiftly_ChatUITests.framework */; };
 		8DAB017659F7F545899C9094 /* Pods_Swiftly_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FF19AB54352D5E9ECC0C32 /* Pods_Swiftly_ChatTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		5AD10390206184CE00FCDA96 /* FirebaseGeneralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGeneralManager.swift; sourceTree = "<group>"; };
 		5AD1039420618AAF00FCDA96 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneManager.swift; sourceTree = "<group>"; };
+		5AD1039920618DB500FCDA96 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5AEF77B2206195F000577210 /* RegisterMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMainViewController.swift; sourceTree = "<group>"; };
 		5C72FF3DE8A9300AF4B321C4 /* Pods-Swiftly ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatUITests/Pods-Swiftly ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6788FC9D56C99A8E1687551A /* Pods-Swiftly ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatUITests/Pods-Swiftly ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90FF19AB54352D5E9ECC0C32 /* Pods_Swiftly_ChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftly_ChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,7 @@
 		5AD1038A206181B600FCDA96 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
+				5AEF77B12061953000577210 /* Register */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		5AD1038E206184B500FCDA96 /* SystemGroups */ = {
 			isa = PBXGroup;
 			children = (
+				5AD1039820618DA600FCDA96 /* Router */,
 				5AD1038F206184C100FCDA96 /* Firebase */,
 			);
 			path = SystemGroups;
@@ -210,6 +216,22 @@
 				5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		5AD1039820618DA600FCDA96 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5AD1039920618DB500FCDA96 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5AEF77B12061953000577210 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF77B2206195F000577210 /* RegisterMainViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		F3478F04B41E367BF5C00788 /* Pods */ = {
@@ -389,6 +411,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftly Chat/Pods-Swiftly Chat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -396,6 +420,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -534,7 +560,9 @@
 				5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */,
 				5AD1039520618AAF00FCDA96 /* AuthManager.swift in Sources */,
 				5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */,
+				5AD1039A20618DB500FCDA96 /* Router.swift in Sources */,
 				5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */,
+				5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
