@@ -16,13 +16,26 @@ class AuthPhoneManager: NSObject {
     open func auth() {
         FUIAuth.defaultAuthUI()?.delegate = self
     
-        let phoneProvider = FUIPhoneAuth.init(authUI: FUIAuth.defaultAuthUI()!)
+        let phoneProvider = FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!)
         FUIAuth.defaultAuthUI()?.providers = [phoneProvider]
         
+        guard let topVC = UIApplication.topViewController() else { return }
+        
+        phoneProvider.signIn(withPresenting: topVC, phoneNumber: nil)
     }
     
 }
 
 extension AuthPhoneManager: FUIAuthDelegate {
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if let error = error {
+            
+        } else {
+            let result = authDataResult?.additionalUserInfo?.isNewUser
+            let phone = authDataResult?.user.phoneNumber
+            debugPrint("phone", phone, "result", result)
+        }
+    }
     
 }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		24CE9BA9A2710E693A9488B2 /* Pods_Swiftly_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301AF4DBC595456A991FDD88 /* Pods_Swiftly_Chat.framework */; };
+		5A54429B2061B44300F289C4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54429A2061B44300F289C4 /* MainTabBarController.swift */; };
+		5A54429F2061B49700F289C4 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54429E2061B49700F289C4 /* StoryboardManager.swift */; };
+		5A5442A32061B7A900F289C4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442A22061B7A900F289C4 /* SettingsViewController.swift */; };
+		5A5442A62061B85300F289C4 /* SettingsNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442A52061B85300F289C4 /* SettingsNaviViewController.swift */; };
 		5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */; };
 		5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1035E20616FAB00FCDA96 /* ViewController.swift */; };
 		5AD1036220616FAB00FCDA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD1036020616FAB00FCDA96 /* Main.storyboard */; };
@@ -50,6 +54,10 @@
 		04165F9888C31653DA6BF02A /* Pods-Swiftly ChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatTests/Pods-Swiftly ChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		0A3963DAC4C6DC79AE789214 /* Pods-Swiftly ChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatTests/Pods-Swiftly ChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		301AF4DBC595456A991FDD88 /* Pods_Swiftly_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftly_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A54429A2061B44300F289C4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5A54429E2061B49700F289C4 /* StoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
+		5A5442A22061B7A900F289C4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5A5442A52061B85300F289C4 /* SettingsNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNaviViewController.swift; sourceTree = "<group>"; };
 		5AD1035920616FAB00FCDA96 /* Swiftly Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiftly Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD1035E20616FAB00FCDA96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +125,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A5442972061B40E00F289C4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5A5442982061B41700F289C4 /* Controllers */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5A5442982061B41700F289C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A5442A42061B82700F289C4 /* Navs */,
+				5A54429A2061B44300F289C4 /* MainTabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A5442992061B41D00F289C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF77B2206195F000577210 /* RegisterMainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A54429C2061B48500F289C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5A54429D2061B48C00F289C4 /* Storyboards */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5A54429D2061B48C00F289C4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5A54429E2061B49700F289C4 /* StoryboardManager.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5A5442A02061B77D00F289C4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5A5442A12061B79500F289C4 /* Controllers */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5A5442A12061B79500F289C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A5442A22061B7A900F289C4 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A5442A42061B82700F289C4 /* Navs */ = {
+			isa = PBXGroup;
+			children = (
+				5A5442A52061B85300F289C4 /* SettingsNaviViewController.swift */,
+			);
+			path = Navs;
+			sourceTree = "<group>";
+		};
 		5AD1035020616FAB00FCDA96 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +248,8 @@
 		5AD1038A206181B600FCDA96 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
+				5A5442A02061B77D00F289C4 /* Settings */,
+				5A5442972061B40E00F289C4 /* Main */,
 				5AEF77B12061953000577210 /* Register */,
 			);
 			path = Groups;
@@ -192,6 +267,7 @@
 		5AD1038E206184B500FCDA96 /* SystemGroups */ = {
 			isa = PBXGroup;
 			children = (
+				5A54429C2061B48500F289C4 /* UI */,
 				5AD1039820618DA600FCDA96 /* Router */,
 				5AD1038F206184C100FCDA96 /* Firebase */,
 			);
@@ -235,7 +311,7 @@
 		5AEF77B12061953000577210 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5AEF77B2206195F000577210 /* RegisterMainViewController.swift */,
+				5A5442992061B41D00F289C4 /* Controllers */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -461,6 +537,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftly Chat/Pods-Swiftly Chat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -470,6 +548,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -622,13 +702,17 @@
 			files = (
 				5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */,
 				5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */,
+				5A54429F2061B49700F289C4 /* StoryboardManager.swift in Sources */,
+				5A54429B2061B44300F289C4 /* MainTabBarController.swift in Sources */,
 				5AEF77BE206198E000577210 /* UIViewControllerExtension.swift in Sources */,
 				5AEF77BA2061988400577210 /* UIStoryboardExtension.swift in Sources */,
 				5AD1039520618AAF00FCDA96 /* AuthManager.swift in Sources */,
 				5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */,
 				5AD1039A20618DB500FCDA96 /* Router.swift in Sources */,
 				5AEF77BC206198A500577210 /* UIApplicationExtension.swift in Sources */,
+				5A5442A32061B7A900F289C4 /* SettingsViewController.swift in Sources */,
 				5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */,
+				5A5442A62061B85300F289C4 /* SettingsNaviViewController.swift in Sources */,
 				5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

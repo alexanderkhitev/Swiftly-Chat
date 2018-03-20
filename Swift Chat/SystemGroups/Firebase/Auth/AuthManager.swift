@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class AuthManager {
     
@@ -23,6 +24,14 @@ class AuthManager {
         switch type {
         case .phone:
             authPhoneManager.auth()
+        }
+    }
+    
+    open func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            debugPrint(error.localizedDescription)
         }
     }
     

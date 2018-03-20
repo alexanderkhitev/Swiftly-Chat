@@ -15,7 +15,9 @@ class Router {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
         guard let window = delegate.window else { return }
         if Auth.auth().currentUser != nil {
-            
+            //
+            let mainTabBarController = StoryboardManager.main.instantiateViewControllerWithIdentifier(MainTabBarController.self)
+            window.rootViewController = mainTabBarController
         } else {
             // Register Group
             window.rootViewController = RegisterMainViewController()

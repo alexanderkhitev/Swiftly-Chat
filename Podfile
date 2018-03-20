@@ -19,6 +19,9 @@ target 'Swiftly Chat' do
     
     # Lint
     pod 'SwiftLint'
+    
+    # Promises
+    pod 'PromisesSwift'
 
     # Pods for Swiftly Chat
   
