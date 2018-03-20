@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="-262" y="-29"/>
         </scene>
-        <!--Item-->
+        <!--Contacts Navi View Controller-->
         <scene sceneID="QQ8-dg-87i">
             <objects>
-                <navigationController id="Vsh-19-KgO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2lX-33-llH"/>
+                <navigationController storyboardIdentifier="ContactsNaviViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vsh-19-KgO" customClass="ContactsNaviViewController" customModule="Swiftly_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="2lX-33-llH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JzA-yj-nIF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

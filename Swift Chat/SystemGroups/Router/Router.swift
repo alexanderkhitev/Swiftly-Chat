@@ -24,4 +24,11 @@ class Router {
         }
     }
     
+    open func showMainTabBarController() {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let window = delegate.window else { return }
+        let mainTabBarController = StoryboardManager.main.instantiateViewControllerWithIdentifier(MainTabBarController.self)
+        window.rootViewController = mainTabBarController
+    }
+    
 }

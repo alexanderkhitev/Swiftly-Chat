@@ -13,6 +13,8 @@ import FirebasePhoneAuthUI
 
 class AuthPhoneManager: NSObject {
     
+    weak var delegate: AuthPhoneManagerDelegate?
+    
     open func auth() {
         FUIAuth.defaultAuthUI()?.delegate = self
     
@@ -30,11 +32,12 @@ extension AuthPhoneManager: FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let error = error {
-            
+            delegate?.authPhoneCompletion?(error)
         } else {
             let result = authDataResult?.additionalUserInfo?.isNewUser
             let phone = authDataResult?.user.phoneNumber
             debugPrint("phone", phone, "result", result)
+            delegate?.authPhoneCompletion?(nil)
         }
     }
     

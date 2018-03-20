@@ -12,7 +12,15 @@ class RegisterMainViewController: UIViewController {
     
     // MARK: - Managers
     
-    private let authManager = AuthManager()
+    private lazy var authManager: AuthManager = {
+        let authManager = AuthManager()
+        authManager.delegate = self
+        return authManager
+    }()
+    
+    // MARK: - UI Elements
+    
+    private let signInButton = UIButton(type: .system)
     
     // MARK: - Lifecycle
 
@@ -21,11 +29,16 @@ class RegisterMainViewController: UIViewController {
         setupSettings()
         // UI
         setupUISettings()
+        addUIElements()
+        // Buttons configurations
+        setupButtonsConfigurations()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        authManager.auth(.phone)
+    // MARK: - Override functions
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setupUIElementsPositions()
     }
 
     // MARK: - Settings
@@ -38,6 +51,48 @@ class RegisterMainViewController: UIViewController {
     
     private func setupUISettings() {
         view.backgroundColor = .white
+    }
+    
+    private func addUIElements() {
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signInButton)
+    }
+    
+    private func setupUIElementsPositions() {
+        signInButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        signInButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        signInButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
+    // MARK: - Buttons' configuration
+    
+    private func setupButtonsConfigurations() {
+        signInButton.setTitle("Sign in", for: .normal)
+        signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+    }
+    
+}
+
+// MARK: - Sign in
+
+extension RegisterMainViewController {
+    
+    @objc private func signIn() {
+        authManager.auth(.phone)
+    }
+    
+}
+
+extension RegisterMainViewController: AuthManagerDelegate {
+    
+    func authCompletion(_ error: Error?) {
+        if let error = error {
+            
+        } else {
+            let router = Router()
+            router.showMainTabBarController()
+        }
     }
     
 }

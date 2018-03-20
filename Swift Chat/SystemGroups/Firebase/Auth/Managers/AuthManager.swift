@@ -15,8 +15,11 @@ class AuthManager {
         case phone
     }
     
+    weak var delegate: AuthManagerDelegate?
+    
     private lazy var authPhoneManager: AuthPhoneManager = {
         let authPhoneManager = AuthPhoneManager()
+        authPhoneManager.delegate = self
         return authPhoneManager
     }()
     
@@ -30,9 +33,21 @@ class AuthManager {
     open func signOut() {
         do {
             try Auth.auth().signOut()
+            let router = Router()
+            router.chooseStartController()
         } catch {
             debugPrint(error.localizedDescription)
         }
+    }
+    
+}
+
+// MARK: - AuthPhoneManager Delegate
+
+extension AuthManager: AuthPhoneManagerDelegate {
+    
+    func authPhoneCompletion(_ error: Error?) {
+        delegate?.authCompletion?(error)
     }
     
 }
