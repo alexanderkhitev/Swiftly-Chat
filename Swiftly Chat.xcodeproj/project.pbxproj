@@ -495,6 +495,11 @@
 					5AD1035820616FAB00FCDA96 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5AD1036C20616FAC00FCDA96 = {
 						CreatedOnToolsVersion = 9.2;
