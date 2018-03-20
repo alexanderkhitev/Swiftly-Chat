@@ -11,10 +11,14 @@ target 'Swiftly Chat' do
     # Auth
     pod 'Firebase/Auth'
     # UI
+    pod 'FirebaseUI/Auth'
     pod 'FirebaseUI/Phone'
     
     # Database
     pod 'RealmSwift'
+    
+    # Lint
+    pod 'SwiftLint'
 
     # Pods for Swiftly Chat
   

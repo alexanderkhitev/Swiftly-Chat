@@ -14,10 +14,15 @@ class AuthManager {
         case phone
     }
     
+    private lazy var authPhoneManager: AuthPhoneManager = {
+        let authPhoneManager = AuthPhoneManager()
+        return authPhoneManager
+    }()
+    
     open func auth(_ type: Type) {
         switch type {
         case .phone:
-            break 
+            authPhoneManager.auth()
         }
     }
     

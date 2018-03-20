@@ -51,13 +51,16 @@ PODS:
   - Realm/Headers (3.3.0)
   - RealmSwift (3.3.0):
     - Realm (= 3.3.0)
+  - SwiftLint (0.25.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - FirebaseUI/Auth
   - FirebaseUI/Phone
   - RealmSwift
+  - SwiftLint
 
 SPEC CHECKSUMS:
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
@@ -73,7 +76,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
   RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: ea4d20b13e83e8db5bd4f093d48ab5762bee3f17
+PODFILE CHECKSUM: cf4540a4d2a8ebe31eca9024591168f33c0d3de6
 
 COCOAPODS: 1.4.0

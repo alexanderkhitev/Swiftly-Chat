@@ -21,6 +21,9 @@
 		5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */; };
 		5AD1039A20618DB500FCDA96 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039920618DB500FCDA96 /* Router.swift */; };
 		5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF77B2206195F000577210 /* RegisterMainViewController.swift */; };
+		5AEF77BA2061988400577210 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF77B92061988400577210 /* UIStoryboardExtension.swift */; };
+		5AEF77BC206198A500577210 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF77BB206198A500577210 /* UIApplicationExtension.swift */; };
+		5AEF77BE206198E000577210 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF77BD206198E000577210 /* UIViewControllerExtension.swift */; };
 		7F4F6DC42CC2970A6A2518B1 /* Pods_Swiftly_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F57381B91C198D368CB243 /* Pods_Swiftly_ChatUITests.framework */; };
 		8DAB017659F7F545899C9094 /* Pods_Swiftly_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FF19AB54352D5E9ECC0C32 /* Pods_Swiftly_ChatTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneManager.swift; sourceTree = "<group>"; };
 		5AD1039920618DB500FCDA96 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5AEF77B2206195F000577210 /* RegisterMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMainViewController.swift; sourceTree = "<group>"; };
+		5AEF77B92061988400577210 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		5AEF77BB206198A500577210 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		5AEF77BD206198E000577210 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		5C72FF3DE8A9300AF4B321C4 /* Pods-Swiftly ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatUITests/Pods-Swiftly ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6788FC9D56C99A8E1687551A /* Pods-Swiftly ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatUITests/Pods-Swiftly ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90FF19AB54352D5E9ECC0C32 /* Pods_Swiftly_ChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftly_ChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +146,7 @@
 				5AD1038E206184B500FCDA96 /* SystemGroups */,
 				5AD1038A206181B600FCDA96 /* Groups */,
 				5AEF77B42061961500577210 /* UI */,
+				5AEF77B72061986100577210 /* Extensions */,
 				5AEF77B62061971600577210 /* Resources */,
 				5AD1038D2061839900FCDA96 /* Info */,
 				5AD1035E20616FAB00FCDA96 /* ViewController.swift */,
@@ -258,6 +265,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5AEF77B72061986100577210 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF77B82061987000577210 /* UI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5AEF77B82061987000577210 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF77B92061988400577210 /* UIStoryboardExtension.swift */,
+				5AEF77BB206198A500577210 /* UIApplicationExtension.swift */,
+				5AEF77BD206198E000577210 /* UIViewControllerExtension.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		F3478F04B41E367BF5C00788 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +309,7 @@
 				5AD1035720616FAB00FCDA96 /* Resources */,
 				4A41016CE081DDCA11A2A46F /* [CP] Embed Pods Frameworks */,
 				D71AF3494C174DBF31A1E4CF /* [CP] Copy Pods Resources */,
+				5AEF77BF20619D7500577210 /* Swift Lint Script */,
 			);
 			buildRules = (
 			);
@@ -454,6 +480,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swiftly Chat/Pods-Swiftly Chat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5AEF77BF20619D7500577210 /* Swift Lint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		A68943DD31B0B9ECC75CF3F9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,9 +622,12 @@
 			files = (
 				5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */,
 				5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */,
+				5AEF77BE206198E000577210 /* UIViewControllerExtension.swift in Sources */,
+				5AEF77BA2061988400577210 /* UIStoryboardExtension.swift in Sources */,
 				5AD1039520618AAF00FCDA96 /* AuthManager.swift in Sources */,
 				5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */,
 				5AD1039A20618DB500FCDA96 /* Router.swift in Sources */,
+				5AEF77BC206198A500577210 /* UIApplicationExtension.swift in Sources */,
 				5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */,
 				5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */,
 			);
