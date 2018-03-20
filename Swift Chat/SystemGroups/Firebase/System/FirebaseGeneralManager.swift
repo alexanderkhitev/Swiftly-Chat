@@ -17,11 +17,12 @@ class FirebaseGeneralManager {
     
     open func configure() {
         FirebaseApp.configure()
+        isPersistenceEnabled(false)
     }
     
 
-    private func enable() {
-    
+    private func isPersistenceEnabled(_ isEnabled: Bool) {
+        Database.database().isPersistenceEnabled = isEnabled
     }
     
 }

@@ -17,6 +17,8 @@
 		5AD1037D20616FAC00FCDA96 /* Swift_ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1037C20616FAC00FCDA96 /* Swift_ChatUITests.swift */; };
 		5AD1038C2061838E00FCDA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AD1038B2061838E00FCDA96 /* GoogleService-Info.plist */; };
 		5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD10390206184CE00FCDA96 /* FirebaseGeneralManager.swift */; };
+		5AD1039520618AAF00FCDA96 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039420618AAF00FCDA96 /* AuthManager.swift */; };
+		5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */; };
 		7F4F6DC42CC2970A6A2518B1 /* Pods_Swiftly_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F57381B91C198D368CB243 /* Pods_Swiftly_ChatUITests.framework */; };
 		8DAB017659F7F545899C9094 /* Pods_Swiftly_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FF19AB54352D5E9ECC0C32 /* Pods_Swiftly_ChatTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		5AD1037E20616FAC00FCDA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AD1038B2061838E00FCDA96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AD10390206184CE00FCDA96 /* FirebaseGeneralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGeneralManager.swift; sourceTree = "<group>"; };
+		5AD1039420618AAF00FCDA96 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPhoneManager.swift; sourceTree = "<group>"; };
 		5C72FF3DE8A9300AF4B321C4 /* Pods-Swiftly ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatUITests/Pods-Swiftly ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6788FC9D56C99A8E1687551A /* Pods-Swiftly ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftly ChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftly ChatUITests/Pods-Swiftly ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90FF19AB54352D5E9ECC0C32 /* Pods_Swiftly_ChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftly_ChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,9 +189,27 @@
 		5AD1038F206184C100FCDA96 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				5AD10390206184CE00FCDA96 /* FirebaseGeneralManager.swift */,
+				5AD10393206189F600FCDA96 /* Auth */,
+				5AD10392206189E800FCDA96 /* System */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		5AD10392206189E800FCDA96 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				5AD10390206184CE00FCDA96 /* FirebaseGeneralManager.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		5AD10393206189F600FCDA96 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5AD1039420618AAF00FCDA96 /* AuthManager.swift */,
+				5AD1039620618ABE00FCDA96 /* AuthPhoneManager.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		F3478F04B41E367BF5C00788 /* Pods */ = {
@@ -365,12 +387,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftly Chat/Pods-Swiftly Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,9 +476,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftly Chat/Pods-Swiftly Chat-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -499,7 +530,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */,
 				5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */,
+				5AD1039520618AAF00FCDA96 /* AuthManager.swift in Sources */,
 				5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */,
 				5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */,
 			);
