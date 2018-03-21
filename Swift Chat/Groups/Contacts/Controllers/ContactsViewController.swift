@@ -18,6 +18,11 @@ class ContactsViewController: UIViewController {
         setupUISettings()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        enableBiggerNaviBar(true)
+    }
+    
     // MARK: - Settings
 
     private func setupSettings() {
@@ -28,6 +33,8 @@ class ContactsViewController: UIViewController {
     
     private func setupUISettings() {
         view.backgroundColor = .white
+        navigationItem.title = "Contacts"
     }
+    
     
 }

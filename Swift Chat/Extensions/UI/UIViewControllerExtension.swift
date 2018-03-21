@@ -22,4 +22,8 @@ extension UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
     }
     
+    open func enableBiggerNaviBar(_ isEnable: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = isEnable
+    }
+    
 }

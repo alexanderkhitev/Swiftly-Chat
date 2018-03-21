@@ -26,6 +26,7 @@
 		5AB6BFA72062EB5A00FCE85E /* UsersPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BFA62062EB5A00FCE85E /* UsersPaths.swift */; };
 		5AB6BFAB2063036800FCE85E /* RealmMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BFAA2063036800FCE85E /* RealmMigrationManager.swift */; };
 		5AB6BFAD2063042600FCE85E /* AppStaticSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BFAC2063042600FCE85E /* AppStaticSettings.swift */; };
+		5AB6BFB12063078F00FCE85E /* DeviceContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BFB02063078F00FCE85E /* DeviceContactsManager.swift */; };
 		5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */; };
 		5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1035E20616FAB00FCDA96 /* ViewController.swift */; };
 		5AD1036220616FAB00FCDA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD1036020616FAB00FCDA96 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		5AB6BFA62062EB5A00FCE85E /* UsersPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPaths.swift; sourceTree = "<group>"; };
 		5AB6BFAA2063036800FCE85E /* RealmMigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrationManager.swift; sourceTree = "<group>"; };
 		5AB6BFAC2063042600FCE85E /* AppStaticSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStaticSettings.swift; sourceTree = "<group>"; };
+		5AB6BFB02063078F00FCE85E /* DeviceContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactsManager.swift; sourceTree = "<group>"; };
 		5AD1035920616FAB00FCDA96 /* Swiftly Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiftly Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD1035E20616FAB00FCDA96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +338,22 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		5AB6BFAE2063077100FCE85E /* DeviceContacts */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BFAF2063077E00FCE85E /* Managers */,
+			);
+			path = DeviceContacts;
+			sourceTree = "<group>";
+		};
+		5AB6BFAF2063077E00FCE85E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BFB02063078F00FCE85E /* DeviceContactsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		5AD1035020616FAB00FCDA96 = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +432,7 @@
 		5AD1038E206184B500FCDA96 /* SystemGroups */ = {
 			isa = PBXGroup;
 			children = (
+				5AB6BFAE2063077100FCE85E /* DeviceContacts */,
 				5AB6BFA82063035600FCE85E /* Realm */,
 				5AB6BFA32062E7C000FCE85E /* App */,
 				5AB6BF9D2062DC2100FCE85E /* PhoneNumbers */,
@@ -893,6 +912,7 @@
 				5AB6BFA22062E01600FCE85E /* UserPhoneModel.swift in Sources */,
 				5AB6BF9C2062C9C600FCE85E /* UserRealmManager.swift in Sources */,
 				5A5442A62061B85300F289C4 /* SettingsNaviViewController.swift in Sources */,
+				5AB6BFB12063078F00FCE85E /* DeviceContactsManager.swift in Sources */,
 				5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */,
 				5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */,
 			);
