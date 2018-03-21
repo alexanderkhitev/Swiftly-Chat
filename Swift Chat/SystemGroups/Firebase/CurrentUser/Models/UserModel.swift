@@ -18,6 +18,8 @@ class UserModel: Object, Mappable {
     @objc dynamic var username: String?
     @objc dynamic var createdTimestamp = 0.0
     @objc dynamic var updateTimestamp = 0.0
+    @objc dynamic var phoneInfo: UserPhoneModel?
+    
     
     // local
     @objc dynamic var isMain = false
@@ -49,6 +51,8 @@ class UserModel: Object, Mappable {
             // timestamps
             createdTimestamp <- map["createdTimestamp"]
             updateTimestamp <- map["updateTimestamp"]
+            // submodels
+            phoneInfo <- map["phoneInfo"]
         } else {
             id >>> map["id"]
             currentPhone >>> map["currentPhone"]
@@ -57,6 +61,8 @@ class UserModel: Object, Mappable {
             // timestamps
             createdTimestamp >>> map["createdTimestamp"]
             updateTimestamp >>> map["updateTimestamp"]
+            // submodels
+            phoneInfo >>> map["phoneInfo"]
         }
     }
 

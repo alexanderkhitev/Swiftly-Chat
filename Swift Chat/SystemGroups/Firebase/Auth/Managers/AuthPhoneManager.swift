@@ -13,6 +13,11 @@ import FirebasePhoneAuthUI
 
 class AuthPhoneManager: NSObject {
     
+    private lazy var userManager: UserManager = {
+        let userManager = UserManager()
+        return userManager
+    }()
+    
     weak var delegate: AuthPhoneManagerDelegate?
     
     open func auth() {
@@ -40,19 +45,30 @@ extension AuthPhoneManager: FUIAuthDelegate {
             
             let isNewUser = additionalUserInfo.isNewUser
             
-            let newPhone = "89270139068"
-            let phoneNumberManager = PhoneNumberManager()
-            phoneNumberManager.parse(newPhone)
-            
             if isNewUser {
                 // save
                 let userModel = UserModel(id: user.uid, currentPhone: phone, providerID: additionalUserInfo.providerID, username: nil)
-
+                saveUser(userModel, phone: phone)
             } else {
                 // download
             }
-                        
-            delegate?.authPhoneCompletion?(nil)
+        }
+    }
+    
+    private func saveUser(_ user: UserModel, phone: String) {
+        let phoneNumberManager = PhoneNumberManager()
+        if let extraPhoneInfo = phoneNumberManager.parse(phone) {
+            let phoneModel = UserPhoneModel(id: user.id, countryCode: Int64(extraPhoneInfo.countryCode), nationalNumber: Int64(extraPhoneInfo.nationalNumber), numberString: extraPhoneInfo.numberString)
+            user.phoneInfo = phoneModel
+        }
+        userManager.saveNewUser(user).then { (isCompleted) in
+            if isCompleted {
+                self.delegate?.authPhoneCompletion?(nil)
+            } else {
+                // TODO: - make custom error
+            }
+        }.catch { (error) in
+            self.delegate?.authPhoneCompletion?(error)
         }
     }
     

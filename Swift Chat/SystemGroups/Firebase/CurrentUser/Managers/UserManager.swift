@@ -17,6 +17,7 @@ class UserManager {
             let currentTimestamp = Date().currentTimestamp
             user.createdTimestamp = currentTimestamp
             user.updateTimestamp = currentTimestamp
+            user.phoneInfo?.updateTimestamp = currentTimestamp
             
             user.isMain = true
             
@@ -41,7 +42,7 @@ class UserManager {
         let userJSON = user.toJSON()
         let promise = Promise<Bool>(on: .global(qos: .background)) { fulfill, reject in
             let ref = Database.database().reference().child("users").child(userID)
-            ref.setValue(userJSON, withCompletionBlock: { (error, ref) in
+            ref.setValue(userJSON, withCompletionBlock: { (error, _) in
                 if let _error = error {
                     reject(_error)
                 } else {
