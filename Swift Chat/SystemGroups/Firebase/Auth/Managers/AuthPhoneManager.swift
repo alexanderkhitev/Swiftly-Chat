@@ -34,9 +34,20 @@ extension AuthPhoneManager: FUIAuthDelegate {
         if let error = error {
             delegate?.authPhoneCompletion?(error)
         } else {
-            let result = authDataResult?.additionalUserInfo?.isNewUser
-            let phone = authDataResult?.user.phoneNumber
-            debugPrint("phone", phone, "result", result, "additionalUserInfo", authDataResult?.additionalUserInfo?.username, authDataResult?.additionalUserInfo?.profile)
+            guard let user = authDataResult?.user else { return }
+            guard let phone = user.phoneNumber else { return }
+            guard let additionalUserInfo = authDataResult?.additionalUserInfo else { return }
+            
+            let isNewUser = additionalUserInfo.isNewUser
+            
+            if isNewUser {
+                // save
+                let userModel = UserModel(id: user.uid, currentPhone: phone, providerID: additionalUserInfo.providerID, username: nil)
+
+            } else {
+                // download
+            }
+                        
             delegate?.authPhoneCompletion?(nil)
         }
     }

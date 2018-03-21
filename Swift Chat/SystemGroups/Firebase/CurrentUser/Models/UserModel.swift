@@ -16,6 +16,25 @@ class UserModel: Object, Mappable {
     @objc dynamic var currentPhone = ""
     @objc dynamic var providerID = ""
     @objc dynamic var username: String?
+    @objc dynamic var createdTimestamp = 0.0
+    @objc dynamic var updateTimestamp = 0.0
+    
+    // local
+    @objc dynamic var isMain = false
+    
+    // realm functions
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(id: String, currentPhone: String, providerID: String, username: String?) {
+        self.init()
+        self.id = id
+        self.currentPhone = currentPhone
+        self.providerID = providerID
+        self.username = username
+    }
     
     convenience required init?(map: Map) {
         self.init()
@@ -27,14 +46,19 @@ class UserModel: Object, Mappable {
             currentPhone <- map["currentPhone"]
             providerID <- map["providerID"]
             username <- map["username"]
+            // timestamps
+            createdTimestamp <- map["createdTimestamp"]
+            updateTimestamp <- map["updateTimestamp"]
         } else {
             id >>> map["id"]
             currentPhone >>> map["currentPhone"]
             providerID >>> map["providerID"]
             username >>> map["username"]
+            // timestamps
+            createdTimestamp >>> map["createdTimestamp"]
+            updateTimestamp >>> map["updateTimestamp"]
         }
     }
-
 
     
 }

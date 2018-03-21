@@ -10,4 +10,11 @@ disabled_rules: # rule identifiers to exclude from running
 - vertical_whitespace
 - type_name
 
+identifier_name:
+    min_length: 2 # only min_length
+    excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+
 

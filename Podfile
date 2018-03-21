@@ -29,6 +29,9 @@ target 'Swiftly Chat' do
     
     # JSON
     pod 'ObjectMapper'
+    
+    # Phone numbers
+    pod 'PhoneNumberKit'
   
     target 'Swiftly ChatTests' do
         inherit! :search_paths

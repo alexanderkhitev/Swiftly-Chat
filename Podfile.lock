@@ -48,6 +48,12 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.1.0)
+  - PhoneNumberKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
+    - PhoneNumberKit/UIKit (= 2.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.1.0)
+  - PhoneNumberKit/UIKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - PromisesObjC (1.0.7)
   - PromisesSwift (1.0.7):
     - PromisesObjC (= 1.0.7)
@@ -67,6 +73,7 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Phone
   - ObjectMapper
+  - PhoneNumberKit
   - PromisesSwift
   - RealmSwift
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
@@ -95,6 +102,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   PromisesObjC: e188094093ab3be6d2b975583e5c12022ad98c4f
   PromisesSwift: 60f58ca196d891f290477a58e888eb97ac17ff49
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
@@ -102,6 +110,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 5954430a8e9fa6686685acefcaa8733e9302555a
+PODFILE CHECKSUM: 755597acb6d52f54f45f675eaca718d6ee870a65
 
 COCOAPODS: 1.4.0
