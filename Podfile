@@ -23,7 +23,12 @@ target 'Swiftly Chat' do
     # Promises
     pod 'PromisesSwift'
 
-    # Pods for Swiftly Chat
+    # UI
+    pod 'Eureka'
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+    
+    # JSON
+    pod 'ObjectMapper'
   
     target 'Swiftly ChatTests' do
         inherit! :search_paths

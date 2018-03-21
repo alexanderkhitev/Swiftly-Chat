@@ -36,7 +36,7 @@ extension AuthPhoneManager: FUIAuthDelegate {
         } else {
             let result = authDataResult?.additionalUserInfo?.isNewUser
             let phone = authDataResult?.user.phoneNumber
-            debugPrint("phone", phone, "result", result)
+            debugPrint("phone", phone, "result", result, "additionalUserInfo", authDataResult?.additionalUserInfo?.username, authDataResult?.additionalUserInfo?.profile)
             delegate?.authPhoneCompletion?(nil)
         }
     }

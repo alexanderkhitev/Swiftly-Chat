@@ -16,6 +16,8 @@
 		5A5442AC2061BDEB00F289C4 /* AuthManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442AB2061BDEB00F289C4 /* AuthManagerDelegate.swift */; };
 		5A5442B02061BF7E00F289C4 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442AF2061BF7E00F289C4 /* ContactsViewController.swift */; };
 		5A5442B22061BF9400F289C4 /* ContactsNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442B12061BF9400F289C4 /* ContactsNaviViewController.swift */; };
+		5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF8E2062BCA400FCE85E /* UserManager.swift */; };
+		5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF922062BCE200FCE85E /* UserModel.swift */; };
 		5AD1035D20616FAB00FCDA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */; };
 		5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1035E20616FAB00FCDA96 /* ViewController.swift */; };
 		5AD1036220616FAB00FCDA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD1036020616FAB00FCDA96 /* Main.storyboard */; };
@@ -66,6 +68,8 @@
 		5A5442AB2061BDEB00F289C4 /* AuthManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerDelegate.swift; sourceTree = "<group>"; };
 		5A5442AF2061BF7E00F289C4 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		5A5442B12061BF9400F289C4 /* ContactsNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsNaviViewController.swift; sourceTree = "<group>"; };
+		5AB6BF8E2062BCA400FCE85E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		5AB6BF922062BCE200FCE85E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5AD1035920616FAB00FCDA96 /* Swiftly Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiftly Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD1035E20616FAB00FCDA96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +237,45 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5AB6BF8A2062BC2F00FCE85E /* LocalDatabase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalDatabase;
+			sourceTree = "<group>";
+		};
+		5AB6BF8C2062BC7F00FCE85E /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		5AB6BF8D2062BC9700FCE85E /* CurrentUser */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BF912062BCD900FCE85E /* Models */,
+				5AB6BF902062BCCF00FCE85E /* Managers */,
+			);
+			path = CurrentUser;
+			sourceTree = "<group>";
+		};
+		5AB6BF902062BCCF00FCE85E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BF8E2062BCA400FCE85E /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5AB6BF912062BCD900FCE85E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BF922062BCE200FCE85E /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5AD1035020616FAB00FCDA96 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +354,7 @@
 		5AD1038E206184B500FCDA96 /* SystemGroups */ = {
 			isa = PBXGroup;
 			children = (
+				5AB6BF8A2062BC2F00FCE85E /* LocalDatabase */,
 				5A54429C2061B48500F289C4 /* UI */,
 				5AD1039820618DA600FCDA96 /* Router */,
 				5AD1038F206184C100FCDA96 /* Firebase */,
@@ -321,6 +365,8 @@
 		5AD1038F206184C100FCDA96 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				5AB6BF8D2062BC9700FCE85E /* CurrentUser */,
+				5AB6BF8C2062BC7F00FCE85E /* Contacts */,
 				5AD10393206189F600FCDA96 /* Auth */,
 				5AD10392206189E800FCDA96 /* System */,
 			);
@@ -584,23 +630,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftly Chat/Pods-Swiftly Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -751,6 +803,7 @@
 			files = (
 				5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */,
 				5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */,
+				5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */,
 				5A54429F2061B49700F289C4 /* StoryboardManager.swift in Sources */,
 				5A54429B2061B44300F289C4 /* MainTabBarController.swift in Sources */,
 				5A5442B02061BF7E00F289C4 /* ContactsViewController.swift in Sources */,
@@ -766,6 +819,7 @@
 				5A5442B22061BF9400F289C4 /* ContactsNaviViewController.swift in Sources */,
 				5A5442AA2061BB3700F289C4 /* AuthPhoneManagerDelegate.swift in Sources */,
 				5A5442A62061B85300F289C4 /* SettingsNaviViewController.swift in Sources */,
+				5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */,
 				5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
