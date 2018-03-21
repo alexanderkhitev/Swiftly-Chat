@@ -40,6 +40,7 @@ extension AuthPhoneManager: FUIAuthDelegate {
             delegate?.authPhoneCompletion?(error)
         } else {
             guard let user = authDataResult?.user else { return }
+            let userID = user.uid
             guard let phone = user.phoneNumber else { return }
             guard let additionalUserInfo = authDataResult?.additionalUserInfo else { return }
             
@@ -47,10 +48,11 @@ extension AuthPhoneManager: FUIAuthDelegate {
             
             if isNewUser {
                 // save
-                let userModel = UserModel(id: user.uid, currentPhone: phone, providerID: additionalUserInfo.providerID, username: nil)
+                let userModel = UserModel(id: userID, currentPhone: phone, providerID: additionalUserInfo.providerID, username: nil)
                 saveUser(userModel, phone: phone)
             } else {
                 // download
+                downloadUser(userID)
             }
         }
     }
@@ -70,6 +72,10 @@ extension AuthPhoneManager: FUIAuthDelegate {
         }.catch { (error) in
             self.delegate?.authPhoneCompletion?(error)
         }
+    }
+    
+    private func downloadUser(_ userID: String) {
+        
     }
     
 }

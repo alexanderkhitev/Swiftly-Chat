@@ -12,6 +12,8 @@ import Promises
 
 class UserManager {
     
+    // MARK: - Saving functions
+    
     open func saveNewUser(_ user: UserModel) -> Promise<Bool> {
         let promise = Promise<Bool>(on: .main) { fulfill, reject in
             let currentTimestamp = Date().currentTimestamp
@@ -49,6 +51,15 @@ class UserManager {
                     fulfill(true)
                 }
             })
+        }
+        return promise
+    }
+    
+    // MARK: - Downloading functions
+    
+    open func downloadUser(_ userID: String) -> Promise<Bool> {
+        let promise = Promise<Bool>(on: .global(qos: .background)) { fulfill, reject in
+            
         }
         return promise
     }
