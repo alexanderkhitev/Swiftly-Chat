@@ -40,6 +40,10 @@ extension AuthPhoneManager: FUIAuthDelegate {
             
             let isNewUser = additionalUserInfo.isNewUser
             
+            let newPhone = "89270139068"
+            let phoneNumberManager = PhoneNumberManager()
+            phoneNumberManager.parse(newPhone)
+            
             if isNewUser {
                 // save
                 let userModel = UserModel(id: user.uid, currentPhone: phone, providerID: additionalUserInfo.providerID, username: nil)

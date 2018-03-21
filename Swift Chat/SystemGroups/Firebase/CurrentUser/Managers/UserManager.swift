@@ -20,13 +20,34 @@ class UserManager {
             
             user.isMain = true
             
-            let userJSON = user.toJSON()
             // save in realm
             
             let userRealmManager = UserRealmManager()
             
-            userRealmManager.saveUser(user)
+            let localSaveUserProm = userRealmManager.saveUser(user)
+            let saveInDBProm = self.saveNewUserInDatabase(user)
             
+            all([localSaveUserProm, saveInDBProm]).then({ (_) in
+                fulfill(true)
+            }).catch({ (error) in
+                reject(error)
+            })
+        }
+        return promise
+    }
+    
+    private func saveNewUserInDatabase(_ user: UserModel) -> Promise<Bool> {
+        let userID = user.id
+        let userJSON = user.toJSON()
+        let promise = Promise<Bool>(on: .global(qos: .background)) { fulfill, reject in
+            let ref = Database.database().reference().child("users").child(userID)
+            ref.setValue(userJSON, withCompletionBlock: { (error, ref) in
+                if let _error = error {
+                    reject(_error)
+                } else {
+                    fulfill(true)
+                }
+            })
         }
         return promise
     }

@@ -12,15 +12,20 @@ import Promises
 
 class UserRealmManager {
     
-    open func saveUser(_ user: UserModel) {
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(user, update: true)
+    open func saveUser(_ user: UserModel) -> Promise<Bool> {
+        let promise = Promise<Bool>(on: .main) { fulfill, reject in
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(user, update: true)
+                    fulfill(true)
+                }
+            } catch {
+                debugPrint(error.localizedDescription)
+                reject(error)
             }
-        } catch {
-            debugPrint(error.localizedDescription)
         }
+        return promise
     }
     
 }
