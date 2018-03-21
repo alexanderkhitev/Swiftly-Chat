@@ -75,7 +75,11 @@ extension AuthPhoneManager: FUIAuthDelegate {
     }
     
     private func downloadUser(_ userID: String) {
-        
+        userManager.downloadUser(userID).then { (_) in
+            self.delegate?.authPhoneCompletion?(nil)
+        }.catch { (error) in
+            self.delegate?.authPhoneCompletion?(error)
+        }
     }
     
 }

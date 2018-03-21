@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import Promises
+import ObjectMapper
 
 class UserManager {
     
@@ -60,7 +61,22 @@ class UserManager {
     open func downloadUser(_ userID: String) -> Promise<Bool> {
         let promise = Promise<Bool>(on: .global(qos: .background)) { fulfill, reject in
             let ref = Database.database().reference().child(UsersPaths.Main.users.rawValue).child(userID)
-            ref.
+            ref.observeSingleEvent(of: .value, with: { (snap) in
+                guard snap.exists() else {
+                    return
+                }
+                guard let json = snap.value as? [String: Any] else { return }
+                guard let user = Mapper<UserModel>().map(JSON: json) else { return }
+                
+                let userRealmManager = UserRealmManager()
+                userRealmManager.saveUser(user).then({ (_) in
+                    fulfill(true)
+                }).catch({ (error) in
+                    reject(error)
+                })
+            }, withCancel: { (error) in
+                reject(error)
+            })
         }
         return promise
     }

@@ -19,6 +19,7 @@ class UserModel: Object, Mappable {
     @objc dynamic var createdTimestamp = 0.0
     @objc dynamic var updateTimestamp = 0.0
     @objc dynamic var phoneInfo: UserPhoneModel?
+    @objc dynamic var version = AppManager.versionNumber()
     
     
     // local
@@ -51,6 +52,8 @@ class UserModel: Object, Mappable {
             // timestamps
             createdTimestamp <- map["createdTimestamp"]
             updateTimestamp <- map["updateTimestamp"]
+            // system properties
+            version <- map["version"]
             // submodels
             phoneInfo <- map["phoneInfo"]
         } else {
@@ -61,6 +64,8 @@ class UserModel: Object, Mappable {
             // timestamps
             createdTimestamp >>> map["createdTimestamp"]
             updateTimestamp >>> map["updateTimestamp"]
+            // system properties
+            version >>> map["version"]
             // submodels
             phoneInfo >>> map["phoneInfo"]
         }
