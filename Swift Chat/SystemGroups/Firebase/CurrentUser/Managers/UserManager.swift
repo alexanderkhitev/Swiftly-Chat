@@ -43,7 +43,7 @@ class UserManager {
         let userID = user.id
         let userJSON = user.toJSON()
         let promise = Promise<Bool>(on: .global(qos: .background)) { fulfill, reject in
-            let ref = Database.database().reference().child("users").child(userID)
+            let ref = Database.database().reference().child(UsersPaths.Main.users.rawValue).child(userID)
             ref.setValue(userJSON, withCompletionBlock: { (error, _) in
                 if let _error = error {
                     reject(_error)
@@ -59,7 +59,8 @@ class UserManager {
     
     open func downloadUser(_ userID: String) -> Promise<Bool> {
         let promise = Promise<Bool>(on: .global(qos: .background)) { fulfill, reject in
-            
+            let ref = Database.database().reference().child(UsersPaths.Main.users.rawValue).child(userID)
+            ref.
         }
         return promise
     }
