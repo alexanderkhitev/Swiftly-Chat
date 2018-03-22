@@ -41,6 +41,14 @@ extension Array where Element : Equatable {
         var uniqueKeys = Set<String>()
         return filter { uniqueKeys.insert("\(keyValue($0))").inserted }
     }
+    
+    public func toDictionary<Key: Hashable>(with selectKey: (Element) -> Key) -> [Key: Element] {
+        var dict = [Key: Element]()
+        for element in self {
+            dict[selectKey(element)] = element
+        }
+        return dict
+    }
 
     
 }

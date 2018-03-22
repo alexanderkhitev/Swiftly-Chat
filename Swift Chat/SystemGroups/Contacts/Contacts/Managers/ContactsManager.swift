@@ -29,14 +29,21 @@ class ContactsManager {
     
     private func syncContactsInDatabase(_ contacts: [DeviceContactModel]) -> Promise<Bool> {
         let promise = Promise<Bool>(on: .main) { fulfill, reject in
-            let contactsJSON = contacts.toJSON()
+            let contactDict = contacts.toDictionary(with: { $0.id })
+            
+            var jsonData = [String: [String: Any]]()
+            
+            for element in contactDict {
+                let json = element.value.toJSON()
+                jsonData[element.key] = json
+            }
             
             DispatchQueue.global(qos: .background).async {
                 guard let userID = Auth.auth().currentUser?.uid else { return }
                 let main = ContactsPaths.Main.self
                 let ref = Database.database().reference().child(main.userContacts.rawValue).child(userID).child(main.userDeviceContacts.rawValue)
                 
-                ref.setValue(contactsJSON, withCompletionBlock: { (error, _) in
+                ref.setValue(jsonData, withCompletionBlock: { (error, _) in
                     if let _error = error {
                         reject(_error)
                     } else {

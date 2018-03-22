@@ -64,7 +64,11 @@ class DeviceContactModel: Object, Mappable {
             givenName >>> map["givenName"]
             familyName >>> map["familyName"]
             if let _phones = phones {
-                Array(_phones) >>> map["phones"]
+                var phoneDict = [String: Any]()
+                for phone in _phones {
+                    phoneDict[phone.id] = phone.toJSON()
+                }
+                phoneDict >>> map["phones"]
             }
         }
     }
