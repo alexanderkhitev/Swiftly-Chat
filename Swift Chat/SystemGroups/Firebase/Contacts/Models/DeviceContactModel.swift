@@ -9,13 +9,15 @@
 import Foundation
 import RealmSwift
 import ObjectMapper
+import ObjectMapper_Realm
 
-class DeviceContactModel: Object {
+class DeviceContactModel: Object, Mappable {
     
     @objc dynamic var id = ""
     @objc dynamic var givenName = ""
     @objc dynamic var familyName = ""
     
+//    var phones: List<DeviceContactPhoneModel>?
     let phones = List<DeviceContactPhoneModel>()
     
     convenience init(id: String, givenName: String, familyName: String) {
@@ -27,6 +29,25 @@ class DeviceContactModel: Object {
     
     override class func primaryKey() -> String? {
         return "id"
+    }
+    
+    convenience required init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        if map.mappingType == .fromJSON {
+            id <- map["id"]
+            givenName <- map["givenName"]
+            familyName <- map["familyName"]
+
+//            phones <- (map["phones"], ListTransform<DeviceContactPhoneModel>())
+        } else {
+            id >>> map["id"]
+            givenName >>> map["givenName"]
+            familyName >>> map["familyName"]
+            Array(phones) >>> map["phones"]
+        }
     }
 
     

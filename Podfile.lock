@@ -48,6 +48,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.1.0)
+  - ObjectMapper+Realm (0.5):
+    - ObjectMapper
+    - RealmSwift
   - PhoneNumberKit (2.1.0):
     - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
     - PhoneNumberKit/UIKit (= 2.1.0)
@@ -73,6 +76,7 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Phone
   - ObjectMapper
+  - ObjectMapper+Realm
   - PhoneNumberKit
   - PromisesSwift
   - RealmSwift
@@ -102,6 +106,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  ObjectMapper+Realm: 3188789fb77c189c7a83cb625333a607eb61a08f
   PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   PromisesObjC: e188094093ab3be6d2b975583e5c12022ad98c4f
   PromisesSwift: 60f58ca196d891f290477a58e888eb97ac17ff49
@@ -110,6 +115,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 755597acb6d52f54f45f675eaca718d6ee870a65
+PODFILE CHECKSUM: b35bd4a273ccc04bf56005eb5e0ca8ad39e2e9c5
 
 COCOAPODS: 1.4.0

@@ -9,6 +9,7 @@
 import Foundation
 import Contacts
 import Promises
+import RealmSwift
 
 class DeviceContactsManager {
     
@@ -52,21 +53,38 @@ class DeviceContactsManager {
             debugPrint(error.localizedDescription)
         }
         
+        var deviceContacts = [DeviceContactModel]()
+        
         let phoneNumberManager = PhoneNumberManager()
         for contact in contacts {
-            debugPrint("familyName", contact.familyName, contact.givenName, "contact identifier", contact.identifier)
-            
             let deviceContact = DeviceContactModel(id: contact.identifier, givenName: contact.givenName, familyName: contact.familyName)
             
-            let phones = [DeviceContactPhoneModel]()
+            let timestamp = Date().currentTimestamp
             
+            let phones = List<DeviceContactPhoneModel>()
             for number in contact.phoneNumbers {
                 if let phone = phoneNumberManager.parse(number.value.stringValue) {
-                    debugPrint("number.value", number.value, "phone", phone.countryCode, phone.numberString)
-                    
-//                    let deviceContactPhone = DeviceContactPhoneModel(
+                    let deviceContactPhone = DeviceContactPhoneModel(contactID: contact.identifier, updateTimestamp: timestamp, countryCode: Int64(phone.countryCode), nationalNumber: Int64(phone.nationalNumber), numberString: phone.numberString)
+                    deviceContact.phones.append(deviceContactPhone)
                 }
             }
+            debugPrint("phones", phones.count)
+            
+//            deviceContact.phones = phones
+            
+            if deviceContact.phones == nil {
+                debugPrint("deviceContact.phones == nil")
+            } else {
+                debugPrint("deviceContact.phones != nil")
+            }
+            deviceContacts.append(deviceContact)
+        }
+        
+        let contactsManager = ContactsManager()
+        contactsManager.syncContacts(deviceContacts).then { (_) in
+            
+        }.catch(on: .main) { (error) in
+            debugPrint(error.localizedDescription)
         }
     }
     

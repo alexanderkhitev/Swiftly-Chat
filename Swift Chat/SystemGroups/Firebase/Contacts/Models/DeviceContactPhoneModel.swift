@@ -8,8 +8,9 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-class DeviceContactPhoneModel: Object {
+class DeviceContactPhoneModel: Object, Mappable {
     
     /// contact id
     @objc dynamic var id = ""
@@ -42,6 +43,28 @@ class DeviceContactPhoneModel: Object {
     
     private func generateID() -> String {
         return contactID + numberString
+    }
+    
+    convenience required init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        if map.mappingType == .fromJSON {
+            id <- map["id"]
+            contactID <- map["contactID"]
+            updateTimestamp <- map["updateTimestamp"]
+            countryCode <- map["countryCode"]
+            nationalNumber <- map["nationalNumber"]
+            numberString <- map["numberString"]
+        } else {
+            id >>> map["id"]
+            contactID >>> map["contactID"]
+            updateTimestamp >>> map["updateTimestamp"]
+            countryCode >>> map["countryCode"]
+            nationalNumber >>> map["nationalNumber"]
+            numberString >>> map["numberString"]
+        }
     }
 
     

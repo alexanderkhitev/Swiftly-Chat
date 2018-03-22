@@ -16,6 +16,7 @@ target 'Swiftly Chat' do
     
     # Database
     pod 'RealmSwift'
+    pod 'ObjectMapper+Realm'
     
     # Lint
     pod 'SwiftLint'

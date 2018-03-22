@@ -20,6 +20,7 @@
 		5A5E01D92063E38900B585A0 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01D82063E38900B585A0 /* ContactsManager.swift */; };
 		5A5E01DD206403E000B585A0 /* DeviceContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */; };
 		5A5E01DF2064094500B585A0 /* DeviceContactPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */; };
+		5A5E01E12064126600B585A0 /* ContactsPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01E02064126600B585A0 /* ContactsPaths.swift */; };
 		5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF8E2062BCA400FCE85E /* UserManager.swift */; };
 		5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF922062BCE200FCE85E /* UserModel.swift */; };
 		5AB6BF9A2062C7AA00FCE85E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF992062C7AA00FCE85E /* DateExtension.swift */; };
@@ -85,6 +86,7 @@
 		5A5E01D82063E38900B585A0 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactModel.swift; sourceTree = "<group>"; };
 		5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactPhoneModel.swift; sourceTree = "<group>"; };
+		5A5E01E02064126600B585A0 /* ContactsPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPaths.swift; sourceTree = "<group>"; };
 		5AB6BF8E2062BCA400FCE85E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5AB6BF922062BCE200FCE85E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5AB6BF992062C7AA00FCE85E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				5A5E01DB2063F68500B585A0 /* Models */,
 				5A5E01DA2063F67C00B585A0 /* Managers */,
+				5A5E01E02064126600B585A0 /* ContactsPaths.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper+Realm/ObjectMapper_Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
@@ -768,6 +772,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper_Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
@@ -941,6 +946,7 @@
 				5AEF77BC206198A500577210 /* UIApplicationExtension.swift in Sources */,
 				5A5442A32061B7A900F289C4 /* SettingsViewController.swift in Sources */,
 				5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */,
+				5A5E01E12064126600B585A0 /* ContactsPaths.swift in Sources */,
 				5A5442AC2061BDEB00F289C4 /* AuthManagerDelegate.swift in Sources */,
 				5AB6BF9F2062DC2E00FCE85E /* PhoneNumberManager.swift in Sources */,
 				5AB6BFAD2063042600FCE85E /* AppStaticSettings.swift in Sources */,
