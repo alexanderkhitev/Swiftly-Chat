@@ -16,6 +16,11 @@
 		5A5442AC2061BDEB00F289C4 /* AuthManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442AB2061BDEB00F289C4 /* AuthManagerDelegate.swift */; };
 		5A5442B02061BF7E00F289C4 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442AF2061BF7E00F289C4 /* ContactsViewController.swift */; };
 		5A5442B22061BF9400F289C4 /* ContactsNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5442B12061BF9400F289C4 /* ContactsNaviViewController.swift */; };
+		5A5E01D72063E24900B585A0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01D62063E24900B585A0 /* HUD.swift */; };
+		5A5E01D92063E38900B585A0 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01D82063E38900B585A0 /* ContactsManager.swift */; };
+		5A5E01DD206403E000B585A0 /* DeviceContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */; };
+		5A5E01DF2064094500B585A0 /* DeviceContactPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */; };
+		5A5E01E12064126600B585A0 /* ContactsPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01E02064126600B585A0 /* ContactsPaths.swift */; };
 		5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF8E2062BCA400FCE85E /* UserManager.swift */; };
 		5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF922062BCE200FCE85E /* UserModel.swift */; };
 		5AB6BF9A2062C7AA00FCE85E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF992062C7AA00FCE85E /* DateExtension.swift */; };
@@ -77,6 +82,11 @@
 		5A5442AB2061BDEB00F289C4 /* AuthManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerDelegate.swift; sourceTree = "<group>"; };
 		5A5442AF2061BF7E00F289C4 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		5A5442B12061BF9400F289C4 /* ContactsNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsNaviViewController.swift; sourceTree = "<group>"; };
+		5A5E01D62063E24900B585A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		5A5E01D82063E38900B585A0 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactModel.swift; sourceTree = "<group>"; };
+		5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactPhoneModel.swift; sourceTree = "<group>"; };
+		5A5E01E02064126600B585A0 /* ContactsPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPaths.swift; sourceTree = "<group>"; };
 		5AB6BF8E2062BCA400FCE85E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5AB6BF922062BCE200FCE85E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5AB6BF992062C7AA00FCE85E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -183,6 +193,7 @@
 		5A54429C2061B48500F289C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5A5E01D52063E23A00B585A0 /* HUD */,
 				5A54429D2061B48C00F289C4 /* Storyboards */,
 			);
 			path = UI;
@@ -255,6 +266,31 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5A5E01D52063E23A00B585A0 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				5A5E01D62063E24900B585A0 /* HUD.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		5A5E01DA2063F67C00B585A0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5A5E01D82063E38900B585A0 /* ContactsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5A5E01DB2063F68500B585A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */,
+				5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5AB6BF8A2062BC2F00FCE85E /* LocalDatabase */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +301,9 @@
 		5AB6BF8C2062BC7F00FCE85E /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				5A5E01DB2063F68500B585A0 /* Models */,
+				5A5E01DA2063F67C00B585A0 /* Managers */,
+				5A5E01E02064126600B585A0 /* ContactsPaths.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -717,6 +756,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper+Realm/ObjectMapper_Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
@@ -732,6 +772,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper_Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
@@ -889,6 +930,7 @@
 				5AD1039720618ABE00FCDA96 /* AuthPhoneManager.swift in Sources */,
 				5AB6BFA52062E7CA00FCE85E /* AppManager.swift in Sources */,
 				5AB6BF9A2062C7AA00FCE85E /* DateExtension.swift in Sources */,
+				5A5E01DD206403E000B585A0 /* DeviceContactModel.swift in Sources */,
 				5AB6BFA72062EB5A00FCE85E /* UsersPaths.swift in Sources */,
 				5AD1035F20616FAB00FCDA96 /* ViewController.swift in Sources */,
 				5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */,
@@ -904,17 +946,21 @@
 				5AEF77BC206198A500577210 /* UIApplicationExtension.swift in Sources */,
 				5A5442A32061B7A900F289C4 /* SettingsViewController.swift in Sources */,
 				5AD10391206184CE00FCDA96 /* FirebaseGeneralManager.swift in Sources */,
+				5A5E01E12064126600B585A0 /* ContactsPaths.swift in Sources */,
 				5A5442AC2061BDEB00F289C4 /* AuthManagerDelegate.swift in Sources */,
 				5AB6BF9F2062DC2E00FCE85E /* PhoneNumberManager.swift in Sources */,
 				5AB6BFAD2063042600FCE85E /* AppStaticSettings.swift in Sources */,
+				5A5E01D72063E24900B585A0 /* HUD.swift in Sources */,
 				5A5442B22061BF9400F289C4 /* ContactsNaviViewController.swift in Sources */,
 				5A5442AA2061BB3700F289C4 /* AuthPhoneManagerDelegate.swift in Sources */,
+				5A5E01D92063E38900B585A0 /* ContactsManager.swift in Sources */,
 				5AB6BFA22062E01600FCE85E /* UserPhoneModel.swift in Sources */,
 				5AB6BF9C2062C9C600FCE85E /* UserRealmManager.swift in Sources */,
 				5A5442A62061B85300F289C4 /* SettingsNaviViewController.swift in Sources */,
 				5AB6BFB12063078F00FCE85E /* DeviceContactsManager.swift in Sources */,
 				5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */,
 				5AEF77B3206195F000577210 /* RegisterMainViewController.swift in Sources */,
+				5A5E01DF2064094500B585A0 /* DeviceContactPhoneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

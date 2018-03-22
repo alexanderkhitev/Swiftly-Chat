@@ -10,12 +10,18 @@ import UIKit
 
 class ContactsViewController: UIViewController {
     
+    // MARK: - Managers
+    
+    private let deviceContactsManager = DeviceContactsManager()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSettings()
         setupUISettings()
+        // request
+        requestContacts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,5 +42,23 @@ class ContactsViewController: UIViewController {
         navigationItem.title = "Contacts"
     }
     
+    
+}
+
+// MARK: - Contacts
+
+extension ContactsViewController {
+    
+    private func requestContacts() {
+        deviceContactsManager.requestContactsAccess().then { (isAccess) in
+            if isAccess {
+                
+            } else {
+                
+            }
+        }.catch(on: .main) { (error) in
+            HUD.showError(error.localizedDescription)
+        }
+    }
     
 }
