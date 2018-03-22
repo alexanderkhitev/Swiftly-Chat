@@ -35,6 +35,15 @@ class DeviceContactModel: Object, Mappable {
         if let object = object as? DeviceContactModel {
             if id == object.id {
                 var phonesEqual = true
+                
+                if phones == nil {
+                    debugPrint("phones == nil")
+                }
+                
+                if object.phones == nil {
+                    debugPrint("object.phones == nil")
+                }
+                
                 if let currentPhones = phones, let otherPhones = object.phones {
                     if currentPhones.count == otherPhones.count {
                         phonesEqual = currentPhones.elementsEqual(otherPhones, by: { (first, second) -> Bool in
