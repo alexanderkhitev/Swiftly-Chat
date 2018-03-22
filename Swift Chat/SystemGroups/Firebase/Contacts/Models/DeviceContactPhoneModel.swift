@@ -14,19 +14,11 @@ class DeviceContactPhoneModel: Object, Mappable {
     
     /// contact id
     @objc dynamic var id = ""
-    @objc dynamic var contactID = "" {
-        didSet {
-            id = generateID()
-        }
-    }
+    @objc dynamic var contactID = ""
     @objc dynamic var updateTimestamp = 0.0
     @objc dynamic var countryCode: Int64 = 0
     @objc dynamic var nationalNumber: Int64 = 0
-    @objc dynamic var numberString = "" {
-        didSet {
-            id = generateID()
-        }
-    }
+    @objc dynamic var numberString = ""
     
     convenience init(contactID: String, updateTimestamp: Double, countryCode: Int64, nationalNumber: Int64, numberString: String) {
         self.init()
@@ -35,6 +27,8 @@ class DeviceContactPhoneModel: Object, Mappable {
         self.countryCode = countryCode
         self.nationalNumber = nationalNumber
         self.numberString = numberString
+        
+        id = generateID()
     }
     
     override class func primaryKey() -> String? {
