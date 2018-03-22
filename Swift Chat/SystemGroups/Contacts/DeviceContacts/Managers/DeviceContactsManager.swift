@@ -84,6 +84,8 @@ class DeviceContactsManager {
         let newContacts = allContacts.removeRepetingItems
         debugPrint("newContacts", newContacts.count)
         
+        guard newContacts.count > 0 else { return }
+        
         let contactsManager = ContactsManager()
         contactsManager.syncContacts(newContacts).then { (_) in
             

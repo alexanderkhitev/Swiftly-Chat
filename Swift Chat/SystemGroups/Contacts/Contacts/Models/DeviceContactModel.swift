@@ -33,7 +33,17 @@ class DeviceContactModel: Object, Mappable {
     
     override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? DeviceContactModel {
-            return id == object.id
+            
+            var phonesEqual = false
+            if let currentPhones = phones, let otherPhones = object.phones {
+                phonesEqual = currentPhones.elementsEqual(otherPhones, by: { (first, second) -> Bool in
+                    return first.id == second.id
+                })
+            } else if phones == nil && object.phones == nil {
+                phonesEqual = true 
+            }
+            
+            return id == object.id && phonesEqual
         } else {
             return false
         }

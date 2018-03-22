@@ -293,6 +293,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5A5E01E420644F2E00B585A0 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BF8C2062BC7F00FCE85E /* Contacts */,
+				5AB6BFAE2063077100FCE85E /* DeviceContacts */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		5AB6BF8A2062BC2F00FCE85E /* LocalDatabase */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,7 +483,7 @@
 		5AD1038E206184B500FCDA96 /* SystemGroups */ = {
 			isa = PBXGroup;
 			children = (
-				5AB6BFAE2063077100FCE85E /* DeviceContacts */,
+				5A5E01E420644F2E00B585A0 /* Contacts */,
 				5AB6BFA82063035600FCE85E /* Realm */,
 				5AB6BFA32062E7C000FCE85E /* App */,
 				5AB6BF9D2062DC2100FCE85E /* PhoneNumbers */,
@@ -490,7 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				5AB6BF8D2062BC9700FCE85E /* CurrentUser */,
-				5AB6BF8C2062BC7F00FCE85E /* Contacts */,
 				5AD10393206189F600FCDA96 /* Auth */,
 				5AD10392206189E800FCDA96 /* System */,
 			);

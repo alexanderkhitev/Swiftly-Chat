@@ -12,7 +12,6 @@ import ObjectMapper
 
 class DeviceContactPhoneModel: Object, Mappable {
     
-    /// contact id
     @objc dynamic var id = ""
     @objc dynamic var contactID = ""
     @objc dynamic var updateTimestamp = 0.0
