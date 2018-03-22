@@ -19,7 +19,9 @@ class DeviceContactsManager {
             
             switch status {
             case .authorized:
-                self.getAllPhoneContacts()
+                DispatchQueue.main.async {
+                    self.getAllPhoneContacts()
+                }
             case .denied:
                 // show
                 fulfill(false)
@@ -30,7 +32,9 @@ class DeviceContactsManager {
                         return
                     }
                     if isAccess {
-                        self.getAllPhoneContacts()
+                        DispatchQueue.main.async {
+                            self.getAllPhoneContacts()
+                        }
                     }
                     fulfill(isAccess)
                 }
@@ -73,10 +77,12 @@ class DeviceContactsManager {
         }
         
         let oldContacts = getLocalSavedDeviceContacts()
+        debugPrint("oldContacts", oldContacts.count)
         
         let allContacts = oldContacts + deviceContacts
         
-        let newContacts = allContacts.unique
+        let newContacts = allContacts.removeRepetingItems
+        debugPrint("newContacts", newContacts.count)
         
         let contactsManager = ContactsManager()
         contactsManager.syncContacts(newContacts).then { (_) in

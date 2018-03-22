@@ -20,4 +20,27 @@ extension Array where Element : Equatable {
         return uniqueValues
     }
     
+    var removeRepetingItems: [Element] {
+        var uniqueValues: [Element] = []
+        var repeatValues: [Element] = []
+        forEach { item in
+            if !uniqueValues.contains(item) && !repeatValues.contains(item) {
+                uniqueValues += [item]
+            } else {
+                // repeat
+                repeatValues.append(item)
+                if let index = uniqueValues.index(of: item) {
+                    uniqueValues.remove(at: index)
+                }
+            }
+        }
+        return uniqueValues
+    }
+    
+    func filterDuplicate<T>(_ keyValue: (Element) -> T) -> [Element] {
+        var uniqueKeys = Set<String>()
+        return filter { uniqueKeys.insert("\(keyValue($0))").inserted }
+    }
+
+    
 }
