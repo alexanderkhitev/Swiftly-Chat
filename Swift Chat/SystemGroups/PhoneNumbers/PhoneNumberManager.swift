@@ -15,8 +15,6 @@ class PhoneNumberManager {
         let phoneNumberKit = PhoneNumberKit()
         do {
             let phoneNumber = try phoneNumberKit.parse(phone)
-            
-            debugPrint("countryCode", phoneNumber.countryCode, "nationalNumber", phoneNumber.nationalNumber, "numberString", phoneNumber.numberString, phoneNumber.type)
             return phoneNumber
         } catch {
             debugPrint(error.localizedDescription)
