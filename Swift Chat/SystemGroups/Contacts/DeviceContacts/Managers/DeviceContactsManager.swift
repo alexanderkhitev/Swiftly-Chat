@@ -19,7 +19,9 @@ class DeviceContactsManager {
             
             switch status {
             case .authorized:
-                self.getAllPhoneContacts()
+                DispatchQueue.main.async {
+                    self.getAllPhoneContacts()
+                }
             case .denied:
                 // show
                 fulfill(false)
@@ -30,7 +32,9 @@ class DeviceContactsManager {
                         return
                     }
                     if isAccess {
-                        self.getAllPhoneContacts()
+                        DispatchQueue.main.async {
+                            self.getAllPhoneContacts()
+                        }
                     }
                     fulfill(isAccess)
                 }
@@ -65,26 +69,37 @@ class DeviceContactsManager {
             for number in contact.phoneNumbers {
                 if let phone = phoneNumberManager.parse(number.value.stringValue) {
                     let deviceContactPhone = DeviceContactPhoneModel(contactID: contact.identifier, updateTimestamp: timestamp, countryCode: Int64(phone.countryCode), nationalNumber: Int64(phone.nationalNumber), numberString: phone.numberString)
-                    deviceContact.phones.append(deviceContactPhone)
+                    phones.append(deviceContactPhone)
                 }
             }
-            debugPrint("phones", phones.count)
-            
-//            deviceContact.phones = phones
-            
-            if deviceContact.phones == nil {
-                debugPrint("deviceContact.phones == nil")
-            } else {
-                debugPrint("deviceContact.phones != nil")
-            }
+            deviceContact.phones = phones
             deviceContacts.append(deviceContact)
         }
         
+        let oldContacts = getLocalSavedDeviceContacts()
+        debugPrint("oldContacts", oldContacts.count)
+        let allContacts = oldContacts + deviceContacts
+        
+        let newContacts = allContacts.removeRepetingItems
+        debugPrint("newContacts", newContacts.count)
+        guard newContacts.count > 0 else { return }
+        
         let contactsManager = ContactsManager()
-        contactsManager.syncContacts(deviceContacts).then { (_) in
+        contactsManager.syncContacts(newContacts).then { (_) in
             
         }.catch(on: .main) { (error) in
             debugPrint(error.localizedDescription)
+        }
+    }
+    
+    private func getLocalSavedDeviceContacts() -> [DeviceContactModel] {
+        do {
+            let realm = try Realm()
+            let contacts = Array(realm.objects(DeviceContactModel.self))
+            return contacts
+        } catch {
+            debugPrint(error.localizedDescription)
+            return []
         }
     }
     

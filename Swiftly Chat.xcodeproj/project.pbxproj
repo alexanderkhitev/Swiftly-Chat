@@ -21,6 +21,7 @@
 		5A5E01DD206403E000B585A0 /* DeviceContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */; };
 		5A5E01DF2064094500B585A0 /* DeviceContactPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */; };
 		5A5E01E12064126600B585A0 /* ContactsPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01E02064126600B585A0 /* ContactsPaths.swift */; };
+		5A5E01E3206441C800B585A0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01E2206441C800B585A0 /* ArrayExtension.swift */; };
 		5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF8E2062BCA400FCE85E /* UserManager.swift */; };
 		5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF922062BCE200FCE85E /* UserModel.swift */; };
 		5AB6BF9A2062C7AA00FCE85E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF992062C7AA00FCE85E /* DateExtension.swift */; };
@@ -87,6 +88,7 @@
 		5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactModel.swift; sourceTree = "<group>"; };
 		5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactPhoneModel.swift; sourceTree = "<group>"; };
 		5A5E01E02064126600B585A0 /* ContactsPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPaths.swift; sourceTree = "<group>"; };
+		5A5E01E2206441C800B585A0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		5AB6BF8E2062BCA400FCE85E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5AB6BF922062BCE200FCE85E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5AB6BF992062C7AA00FCE85E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -291,6 +293,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5A5E01E420644F2E00B585A0 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6BF8C2062BC7F00FCE85E /* Contacts */,
+				5AB6BFAE2063077100FCE85E /* DeviceContacts */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		5AB6BF8A2062BC2F00FCE85E /* LocalDatabase */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB6BF992062C7AA00FCE85E /* DateExtension.swift */,
+				5A5E01E2206441C800B585A0 /* ArrayExtension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -471,7 +483,7 @@
 		5AD1038E206184B500FCDA96 /* SystemGroups */ = {
 			isa = PBXGroup;
 			children = (
-				5AB6BFAE2063077100FCE85E /* DeviceContacts */,
+				5A5E01E420644F2E00B585A0 /* Contacts */,
 				5AB6BFA82063035600FCE85E /* Realm */,
 				5AB6BFA32062E7C000FCE85E /* App */,
 				5AB6BF9D2062DC2100FCE85E /* PhoneNumbers */,
@@ -487,7 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				5AB6BF8D2062BC9700FCE85E /* CurrentUser */,
-				5AB6BF8C2062BC7F00FCE85E /* Contacts */,
 				5AD10393206189F600FCDA96 /* Auth */,
 				5AD10392206189E800FCDA96 /* System */,
 			);
@@ -952,6 +963,7 @@
 				5AB6BFAD2063042600FCE85E /* AppStaticSettings.swift in Sources */,
 				5A5E01D72063E24900B585A0 /* HUD.swift in Sources */,
 				5A5442B22061BF9400F289C4 /* ContactsNaviViewController.swift in Sources */,
+				5A5E01E3206441C800B585A0 /* ArrayExtension.swift in Sources */,
 				5A5442AA2061BB3700F289C4 /* AuthPhoneManagerDelegate.swift in Sources */,
 				5A5E01D92063E38900B585A0 /* ContactsManager.swift in Sources */,
 				5AB6BFA22062E01600FCE85E /* UserPhoneModel.swift in Sources */,
