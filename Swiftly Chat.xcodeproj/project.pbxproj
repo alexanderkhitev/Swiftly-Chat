@@ -21,6 +21,7 @@
 		5A5E01DD206403E000B585A0 /* DeviceContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */; };
 		5A5E01DF2064094500B585A0 /* DeviceContactPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */; };
 		5A5E01E12064126600B585A0 /* ContactsPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01E02064126600B585A0 /* ContactsPaths.swift */; };
+		5A5E01E3206441C800B585A0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E01E2206441C800B585A0 /* ArrayExtension.swift */; };
 		5AB6BF8F2062BCA400FCE85E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF8E2062BCA400FCE85E /* UserManager.swift */; };
 		5AB6BF932062BCE200FCE85E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF922062BCE200FCE85E /* UserModel.swift */; };
 		5AB6BF9A2062C7AA00FCE85E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6BF992062C7AA00FCE85E /* DateExtension.swift */; };
@@ -87,6 +88,7 @@
 		5A5E01DC206403E000B585A0 /* DeviceContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactModel.swift; sourceTree = "<group>"; };
 		5A5E01DE2064094500B585A0 /* DeviceContactPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactPhoneModel.swift; sourceTree = "<group>"; };
 		5A5E01E02064126600B585A0 /* ContactsPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPaths.swift; sourceTree = "<group>"; };
+		5A5E01E2206441C800B585A0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		5AB6BF8E2062BCA400FCE85E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5AB6BF922062BCE200FCE85E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5AB6BF992062C7AA00FCE85E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB6BF992062C7AA00FCE85E /* DateExtension.swift */,
+				5A5E01E2206441C800B585A0 /* ArrayExtension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				5AB6BFAD2063042600FCE85E /* AppStaticSettings.swift in Sources */,
 				5A5E01D72063E24900B585A0 /* HUD.swift in Sources */,
 				5A5442B22061BF9400F289C4 /* ContactsNaviViewController.swift in Sources */,
+				5A5E01E3206441C800B585A0 /* ArrayExtension.swift in Sources */,
 				5A5442AA2061BB3700F289C4 /* AuthPhoneManagerDelegate.swift in Sources */,
 				5A5E01D92063E38900B585A0 /* ContactsManager.swift in Sources */,
 				5AB6BFA22062E01600FCE85E /* UserPhoneModel.swift in Sources */,
