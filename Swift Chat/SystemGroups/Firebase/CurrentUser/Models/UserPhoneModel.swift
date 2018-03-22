@@ -18,6 +18,10 @@ class UserPhoneModel: Object, Mappable {
     @objc dynamic var countryCode: Int64 = 0
     @objc dynamic var nationalNumber: Int64 = 0
     @objc dynamic var numberString = ""
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 
     convenience init(id: String, countryCode: Int64, nationalNumber: Int64, numberString: String) {
         self.init()

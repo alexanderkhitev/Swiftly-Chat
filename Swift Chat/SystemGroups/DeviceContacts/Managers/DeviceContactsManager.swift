@@ -54,11 +54,17 @@ class DeviceContactsManager {
         
         let phoneNumberManager = PhoneNumberManager()
         for contact in contacts {
-            debugPrint("familyName", contact.familyName, contact.givenName)
+            debugPrint("familyName", contact.familyName, contact.givenName, "contact identifier", contact.identifier)
+            
+            let deviceContact = DeviceContactModel(id: contact.identifier, givenName: contact.givenName, familyName: contact.familyName)
+            
+            let phones = [DeviceContactPhoneModel]()
+            
             for number in contact.phoneNumbers {
                 if let phone = phoneNumberManager.parse(number.value.stringValue) {
                     debugPrint("number.value", number.value, "phone", phone.countryCode, phone.numberString)
-            
+                    
+//                    let deviceContactPhone = DeviceContactPhoneModel(
                 }
             }
         }
