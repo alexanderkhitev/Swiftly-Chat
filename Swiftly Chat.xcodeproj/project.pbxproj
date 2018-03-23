@@ -681,7 +681,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1144,6 +1144,7 @@
 			baseConfigurationReference = 031E869AA15B6AADFF207731 /* Pods-Swiftly Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swiftly Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQCFR2VMWQ;
 				INFOPLIST_FILE = "Swift Chat/Info.plist";
@@ -1160,6 +1161,7 @@
 			baseConfigurationReference = 93940685EFE9A0491506868B /* Pods-Swiftly Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swiftly Chat.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQCFR2VMWQ;
 				INFOPLIST_FILE = "Swift Chat/Info.plist";
