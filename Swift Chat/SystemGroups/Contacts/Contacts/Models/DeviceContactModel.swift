@@ -17,6 +17,8 @@ class DeviceContactModel: Object, Mappable {
     @objc dynamic var givenName = ""
     @objc dynamic var familyName = ""
     
+    var isNew = false
+    
 //    var phones: List<DeviceContactPhoneModel>?
     let phones = List<DeviceContactPhoneModel>()
     
@@ -31,24 +33,19 @@ class DeviceContactModel: Object, Mappable {
         return "id"
     }
     
+    override static func ignoredProperties() -> [String] {
+        return ["isNew"]
+    }
+    
     open override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? DeviceContactModel else { return false }
         if id == object.id {
             var phonesEqual = false
-            
-//            if phones == nil {
-//                debugPrint("phones == nil")
-//            } else {
-//                debugPrint("phones != nil")
-//            }
-            
-//            if let currentPhones = phones, let otherPhones = object.phones {
-                if phones.count == object.phones.count {
-                    phonesEqual = phones.elementsEqual(object.phones, by: { (first, second) -> Bool in
-                        return first.id == second.id && first.nationalNumber == second.nationalNumber
-                    })
-                }
-//            }
+            if phones.count == object.phones.count {
+                phonesEqual = phones.elementsEqual(object.phones, by: { (first, second) -> Bool in
+                    return first.id == second.id && first.nationalNumber == second.nationalNumber
+                })
+            }
             debugPrint("phonesEqual", phonesEqual)
             return phonesEqual
         }

@@ -62,24 +62,24 @@ class DeviceContactsManager {
         let phoneNumberManager = PhoneNumberManager()
         for contact in contacts {
             let deviceContact = DeviceContactModel(id: contact.identifier, givenName: contact.givenName, familyName: contact.familyName)
+            deviceContact.isNew = true
             
             let timestamp = Date().currentTimestamp
             
-//            let phones = List<DeviceContactPhoneModel>()
             for number in contact.phoneNumbers {
                 if let phone = phoneNumberManager.parse(number.value.stringValue) {
                     let deviceContactPhone = DeviceContactPhoneModel(contactID: contact.identifier, updateTimestamp: timestamp, countryCode: Int64(phone.countryCode), nationalNumber: Int64(phone.nationalNumber), numberString: phone.numberString)
                     deviceContact.phones.append(deviceContactPhone)
                 }
             }
-//            deviceContact.phones = phones
             deviceContacts.append(deviceContact)
         }
         
         let oldContacts = getLocalSavedDeviceContacts()
         let allContacts = oldContacts + deviceContacts
         
-        let newContacts = allContacts.removeRepetingItems
+        var newContacts = allContacts.removeRepetingItems
+        newContacts = newContacts.filter({ $0.isNew == true })
         debugPrint("newContacts", newContacts.count)
         guard newContacts.count > 0 else { return }
         
