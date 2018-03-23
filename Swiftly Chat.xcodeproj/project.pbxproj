@@ -100,6 +100,7 @@
 		5AB6BFAA2063036800FCE85E /* RealmMigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrationManager.swift; sourceTree = "<group>"; };
 		5AB6BFAC2063042600FCE85E /* AppStaticSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStaticSettings.swift; sourceTree = "<group>"; };
 		5AB6BFB02063078F00FCE85E /* DeviceContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContactsManager.swift; sourceTree = "<group>"; };
+		5ACEFE99206526CC00497F1A /* Swiftly Chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Swiftly Chat.entitlements"; sourceTree = "<group>"; };
 		5AD1035920616FAB00FCDA96 /* Swiftly Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiftly Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD1035C20616FAB00FCDA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD1035E20616FAB00FCDA96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +409,7 @@
 		5AD1035020616FAB00FCDA96 = {
 			isa = PBXGroup;
 			children = (
+				5ACEFE99206526CC00497F1A /* Swiftly Chat.entitlements */,
 				5AD1035B20616FAB00FCDA96 /* Swift Chat */,
 				5AD1037020616FAC00FCDA96 /* Swift ChatTests */,
 				5AD1037B20616FAC00FCDA96 /* Swift ChatUITests */,
@@ -677,6 +679,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};

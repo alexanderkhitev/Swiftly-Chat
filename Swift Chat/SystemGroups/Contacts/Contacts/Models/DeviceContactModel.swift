@@ -17,8 +17,8 @@ class DeviceContactModel: Object, Mappable {
     @objc dynamic var givenName = ""
     @objc dynamic var familyName = ""
     
-    var phones: List<DeviceContactPhoneModel>?
-//    let phones = List<DeviceContactPhoneModel>()
+//    var phones: List<DeviceContactPhoneModel>?
+    let phones = List<DeviceContactPhoneModel>()
     
     convenience init(id: String, givenName: String, familyName: String) {
         self.init()
@@ -31,35 +31,28 @@ class DeviceContactModel: Object, Mappable {
         return "id"
     }
     
-    override func isEqual(_ object: Any?) -> Bool {
-        if let object = object as? DeviceContactModel {
-            if id == object.id {
-                var phonesEqual = true
-                
-                if phones == nil {
-                    debugPrint("phones == nil")
+    open override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? DeviceContactModel else { return false }
+        if id == object.id {
+            var phonesEqual = false
+            
+//            if phones == nil {
+//                debugPrint("phones == nil")
+//            } else {
+//                debugPrint("phones != nil")
+//            }
+            
+//            if let currentPhones = phones, let otherPhones = object.phones {
+                if phones.count == object.phones.count {
+                    phonesEqual = phones.elementsEqual(object.phones, by: { (first, second) -> Bool in
+                        return first.id == second.id && first.nationalNumber == second.nationalNumber
+                    })
                 }
-                
-                if object.phones == nil {
-                    debugPrint("object.phones == nil")
-                }
-                
-                if let currentPhones = phones, let otherPhones = object.phones {
-                    if currentPhones.count == otherPhones.count {
-                        phonesEqual = currentPhones.elementsEqual(otherPhones, by: { (first, second) -> Bool in
-                            return first.id == second.id && first.nationalNumber == second.nationalNumber
-                        })
-                    } else {
-                        phonesEqual = false
-                    }
-                }
-                debugPrint("phonesEqual", phonesEqual)
-                return phonesEqual
-            }
-            return false
-        } else {
-            return false
+//            }
+            debugPrint("phonesEqual", phonesEqual)
+            return phonesEqual
         }
+        return false
     }
     
     convenience required init?(map: Map) {
@@ -71,18 +64,18 @@ class DeviceContactModel: Object, Mappable {
             id <- map["id"]
             givenName <- map["givenName"]
             familyName <- map["familyName"]
-            phones <- (map["phones"], ListTransform<DeviceContactPhoneModel>())
+//            phones <- (map["phones"], ListTransform<DeviceContactPhoneModel>())
         } else {
             id >>> map["id"]
             givenName >>> map["givenName"]
             familyName >>> map["familyName"]
-            if let _phones = phones {
+//            if let _phones = phones {
                 var phoneDict = [String: Any]()
-                for phone in _phones {
+                for phone in phones {
                     phoneDict[phone.id] = phone.toJSON()
                 }
                 phoneDict >>> map["phones"]
-            }
+//            }
         }
     }
     
