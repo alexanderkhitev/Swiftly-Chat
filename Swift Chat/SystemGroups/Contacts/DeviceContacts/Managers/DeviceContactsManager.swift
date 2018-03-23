@@ -68,7 +68,7 @@ class DeviceContactsManager {
             
             for number in contact.phoneNumbers {
                 if let phone = phoneNumberManager.parse(number.value.stringValue) {
-                    let deviceContactPhone = DeviceContactPhoneModel(contactID: contact.identifier, updateTimestamp: timestamp, countryCode: Int64(phone.countryCode), nationalNumber: Int64(phone.nationalNumber), numberString: phone.numberString)
+                    let deviceContactPhone = DeviceContactPhoneModel(contactID: contact.identifier, updateTimestamp: timestamp, countryCode: Int64(phone.countryCode), nationalNumber: Int64(phone.nationalNumber))
                     deviceContact.phones.append(deviceContactPhone)
                 }
             }
