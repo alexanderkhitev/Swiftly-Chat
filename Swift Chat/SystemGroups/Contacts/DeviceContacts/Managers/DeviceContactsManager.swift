@@ -77,18 +77,14 @@ class DeviceContactsManager {
         
         let oldContacts = getLocalSavedDeviceContacts()
         let allContacts = oldContacts + deviceContacts
-        
         var newContacts = allContacts.removeRepetingItems
         newContacts = newContacts.filter({ $0.isNew == true })
         debugPrint("newContacts", newContacts.count)
-        guard newContacts.count > 0 else { return }
-        
-        for newContact in newContacts {
-            debugPrint(newContact.givenName, newContact.familyName)
-        }
+//        guard newContacts.count > 0 else { return }
         
         let contactsManager = ContactsManager()
-        contactsManager.syncContacts(newContacts).then { (_) in
+        // new contacts
+        contactsManager.syncContacts(deviceContacts).then { (_) in
             
         }.catch(on: .main) { (error) in
             debugPrint(error.localizedDescription)
