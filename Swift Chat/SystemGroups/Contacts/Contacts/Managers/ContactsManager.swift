@@ -43,7 +43,7 @@ class ContactsManager {
                 let main = ContactsPaths.Main.self
                 let ref = Database.database().reference().child(main.userContacts.rawValue).child(userID).child(main.userDeviceContacts.rawValue)
                 
-                ref.setValue(jsonData, withCompletionBlock: { (error, _) in
+                ref.updateChildValues(jsonData, withCompletionBlock: { (error, _) in
                     if let _error = error {
                         reject(_error)
                     } else {
