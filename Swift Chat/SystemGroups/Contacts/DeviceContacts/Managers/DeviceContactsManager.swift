@@ -79,12 +79,14 @@ class DeviceContactsManager {
         let allContacts = oldContacts + deviceContacts
         var newContacts = allContacts.removeRepetingItems
         newContacts = newContacts.filter({ $0.isNew == true })
-        debugPrint("newContacts", newContacts.count)
-//        guard newContacts.count > 0 else { return }
+        
+        // TODO: - Think about deleting contacts https://trello.com/c/CDCmy56r/1-implement-the-function-if-the-user-deleted-a-contact-from-his-ios-contact-list-then-you-need-to-delete-from-devicecontacts
+        
+        guard newContacts.count > 0 else { return }
         
         let contactsManager = ContactsManager()
         // new contacts
-        contactsManager.syncContacts(deviceContacts).then { (_) in
+        contactsManager.syncContacts(newContacts).then { (_) in
             
         }.catch(on: .main) { (error) in
             debugPrint(error.localizedDescription)

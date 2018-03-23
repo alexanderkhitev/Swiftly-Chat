@@ -46,7 +46,6 @@ class DeviceContactModel: Object, Mappable {
                     return first.id == second.id && first.nationalNumber == second.nationalNumber
                 })
             }
-            debugPrint("phonesEqual", phonesEqual)
             return phonesEqual
         }
         return false

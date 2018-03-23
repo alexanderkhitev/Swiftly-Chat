@@ -27,7 +27,7 @@ class AppManager {
         let version = versionBuild().version.replacingOccurrences(of: ".", with: "")
         let build = versionBuild().build.replacingOccurrences(of: ".", with: "")
         let versionNumString = version.appending(build)
-        guard let versionNum = Int(versionNumString) else { return 0 }
+        guard let versionNum = Int(versionNumString) else { return 0 }        
         return versionNum
     }
     

@@ -41,7 +41,7 @@ class ContactsManager {
             DispatchQueue.global(qos: .background).async {
                 guard let userID = Auth.auth().currentUser?.uid else { return }
                 let main = ContactsPaths.Main.self
-                let ref = Database.database().reference().child(main.userContacts.rawValue).child(userID).child(main.userDeviceContacts.rawValue)
+                let ref = Database.database().reference().child(main.userContacts.rawValue).child(userID).child(main.deviceContacts.rawValue)
                 
                 ref.updateChildValues(jsonData, withCompletionBlock: { (error, _) in
                     if let _error = error {

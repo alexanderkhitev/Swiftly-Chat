@@ -11,7 +11,7 @@ import Foundation
 struct ContactsPaths {
     
     enum Main: String {
-        case userContacts, userDeviceContacts
+        case userContacts, deviceContacts
     }
     
 }
